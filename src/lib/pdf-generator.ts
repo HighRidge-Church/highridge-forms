@@ -231,7 +231,7 @@ export async function generateFormPdf(formData: FormData): Promise<Uint8Array> {
                             let image: PDFImage | undefined;
                             if (receipt.fileType.includes('png')) {
                                 image = await pdfDoc.embedPng(base64Data);
-                            } else if (receipt.fileType.includes('jpg') ?? receipt.fileType.includes('jpeg')) {
+                            } else if (receipt.fileType.includes('jpg') || receipt.fileType.includes('jpeg')) {
                                 image = await pdfDoc.embedJpg(base64Data);
                             }
 
